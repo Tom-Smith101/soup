@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            $(document).ready(function(){
+                $supers = "";
+                $round = 0;
+            });
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Major+Mono+Display&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <top>
+            <center>
+                <h1>What does your favourite soup say about you?</h1>
+            </center>
+        </top>
+        
+        <img class="center" src="soup-1.png" style="height: 200px;">
+        <center style="margin-top: 50px;">
+            <label for="soups">What is your favourite soup?</label>
+
+            <select name="soups" id="soups">
+                <option value=""></option>
+                <option value="tomato">tomato</option>
+                <option value="onion">onion</option>
+                <option value="mushroom">mushroom</option>
+                <option value="chicken">chicken</option>
+                <option value="cock">cock</option>
+            </select>
+
+            <p class="glow" style="display: none;"></p>
+        </center>
+<script>
+    $('select').on('change', function() {
+        if ($round == 4 ) {
+            console.log("hit 2 " + $round)
+            $("p").text("PIKE level gay!!");
+            $round = $round + 1;
+            $("p").show();
+
+        } else if ($round > 2) {
+            $("p").text("YOUR GAY GIVE UP!!");
+            $round = $round + 1;
+            console.log("hit 1 " + $round);
+            $("p").show();
+
+        } else {
+
+            $("p").text('Your ' + $supers + ' Gay');
+            $("p").show();
+            
+            $supers = $supers + " SUPER";
+            $round = $round + 1;
+            console.log($round);
+        }
+    });
+</script>
+       
+    </body>
+</html>
